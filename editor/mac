@@ -1,0 +1,13 @@
+#!/bin/bash
+rm ./editor
+# /usr/local/lib/fpc/3.3.1/ppcx64 -B test.pas -glh
+fpc -B editor.pas -glh -Fu../../vipgfx-code/src -Fu../../vipgfx-code/TTF/myFT1
+rm *.o
+rm *.ppu
+rm *.s
+rm *.res
+rm ../../vipgfx-code/TTF/myFT1/*.o
+rm ../../vipgfx-code/TTF/myFT1/*.ppu
+rm ../../vipgfx-code/src/*.o
+rm ../../vipgfx-code/src/*.ppu
+./editor
