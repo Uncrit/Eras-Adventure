@@ -547,10 +547,10 @@ class Level:
                 self.coin_sound.play()
 
         #heart
-        pygame.joystick.init()
-        joystick_list = [pygame.joystick.Joystick(x) for x in range(pygame.joystick.get_count())]
-        joystick = joystick_list[0]
-        if pygame.key.get_pressed()[pygame.K_e] or joystick.get_button(3,6):
+        # pygame.joystick.init()
+        # joystick_list = [pygame.joystick.Joystick(x) for x in range(pygame.joystick.get_count())]
+        # joystick = joystick_list[0]
+        if pygame.key.get_pressed()[pygame.K_e]:
             for heart in self.heart.sprites():
                 if heart.rect.colliderect(player.rect):
                     if self.player_health < 10 and self.coin_amount >= 5:

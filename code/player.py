@@ -134,25 +134,25 @@ class Player(Animated_Tile):
             
     def get_inputs(self):
         keys = pygame.key.get_pressed()
-        pygame.joystick.init()
-        joystick_list = [pygame.joystick.Joystick(x) for x in range(pygame.joystick.get_count())]
-        joystick = joystick_list[0]
+        # pygame.joystick.init()
+        # joystick_list = [pygame.joystick.Joystick(x) for x in range(pygame.joystick.get_count())]
+        # joystick = joystick_list[0]
         
-        if keys[pygame.K_d] or joystick.get_axis(0) > 0.5:
+        if keys[pygame.K_d]:
             self.direction.x = 1
             self.facing_right = True
-        elif keys[pygame.K_a] or joystick.get_axis(0) < -0.5:
+        elif keys[pygame.K_a]:
             self.direction.x = -1
             self.facing_right = False
-        elif keys[pygame.K_w] or joystick.get_axis(1) < -0.5:
+        elif keys[pygame.K_w]:
             self.image = pygame.image.load("../graphics/player/eg/up.png")
             self.direction.x = 0
-        elif keys[pygame.K_s] or joystick.get_axis(1) > 0.5:
+        elif keys[pygame.K_s]:
             self.image = pygame.image.load("../graphics/player/eg/down.png")
             self.direction.x = 0
         else:
             self.direction.x = 0
-        if (keys[pygame.K_SPACE] or joystick.get_button(1,2)) and self.on_ground:
+        if (keys[pygame.K_SPACE]) and self.on_ground:
             self.jump()
             self.jump_sound.play()
    

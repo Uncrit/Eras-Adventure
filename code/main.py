@@ -77,9 +77,9 @@ class Game:
         self.coin_amount = 0
         
     def get_inputs(self):
-        pygame.joystick.init()
-        joystick_list = [pygame.joystick.Joystick(x) for x in range(pygame.joystick.get_count())]
-        joystick = joystick_list[0]
+        # pygame.joystick.init()
+        # joystick_list = [pygame.joystick.Joystick(x) for x in range(pygame.joystick.get_count())]
+        # joystick = joystick_list[0]
         if e.type == pygame.KEYDOWN:
             if self.active == "Start" and e.key == pygame.K_q:
                 self.active = "ShowHighscore"
